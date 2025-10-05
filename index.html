@@ -1,139 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Bench Energy — Weekly Coal Market Update</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Weekly coal market update for SME traders, cement/steel buyers, and logistics. Clear benchmarks, key spreads, and short commentary. €25/month." />
-  <link rel="icon" href="bench-energy-logo.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bench Energy — Weekly Coal Market Report & Price Analytics</title>
+  <meta name="description" content="Independent weekly coal market updates and composite benchmarks for Asia, Europe and Africa. Clear, data-driven insights for traders and analysts.">
+  <meta name="keywords" content="coal market update, weekly coal report, coal price data, API2, NEWC, RB, energy benchmarks, coal analytics">
+  <link rel="icon" href="/img/favicon.png" />
+
+  <!-- Structured Data (Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bench Energy",
+    "url": "https://bench.energy",
+    "logo": "https://bench.energy/img/bench-energy-logo.png",
+    "description": "Weekly coal market updates and benchmark analytics covering Asia, Europe and Africa.",
+    "sameAs": [
+      "https://www.linkedin.com/company/benchenergy"
+    ]
+  }
+  </script>
+
   <style>
-    :root{
-      --bg:#0B0D10; --text:#F2F5F7; --muted:#9AA6B2;
-      --primary:#4CC9F0; --accent:#F72585; --card:#11151a; --line:#212832;
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+      margin: 0;
+      padding: 0;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:var(--primary);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:1050px;margin:0 auto;padding:24px}
-    header{padding:18px 0; display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .brand{display:flex; align-items:center; gap:12px}
-    .logo{width:44px;height:44px;border-radius:12px;object-fit:cover}
-    .name{font-weight:700;letter-spacing:.3px;font-size:1.1rem}
-    .pill{display:inline-block;font-size:.8rem;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-    .hero{margin:4px 0 16px; padding:26px; background:var(--card); border:1px solid var(--line); border-radius:16px}
-    .h1{margin:0 0 10px;font-size:clamp(22px,4vw,36px);line-height:1.15}
-    .lead{color:var(--muted);max-width:860px;margin:8px 0 0}
-    .grid{display:grid;gap:16px;margin:18px 0}
-    @media(min-width:930px){ .grid.cols-3{grid-template-columns:2fr 1fr 1fr} .grid.cols-2{grid-template-columns:1fr 1fr} }
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-    h2{margin:0 0 10px;font-size:1.15rem}
-    h3{margin:0 0 6px;font-size:1rem;color:var(--muted)}
-    ul{margin:8px 0 0 18px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:600;border:1px solid var(--primary);background:var(--primary);color:#001018;transition:all .15s}
-    .btn:hover{opacity:.9}
-    .btn.secondary{background:transparent;color:var(--primary)}
-    .meta{font-size:.9rem;color:var(--muted)}
-    .examples{display:grid;gap:10px}
-    .ex{border:1px dashed var(--line);border-radius:10px;padding:10px}
-    .ex small{color:var(--muted)}
-    footer{margin:28px 0 12px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem}
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    header img {
+      width: 100px;
+      height: auto;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 20px 0 10px;
+      color: #0b0d10;
+    }
+    p.subtitle {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+    .btn-subscribe {
+      display: inline-block;
+      background: #4cc9f0;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-subscribe:hover {
+      background: #38a8d2;
+    }
+    .section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #333;
+    }
+    .section h2 {
+      color: #4cc9f0;
+      font-size: 20px;
+      border-bottom: 2px solid #4cc9f0;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #f8f9fa;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+    footer a {
+      color: #4cc9f0;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <img class="logo" src="bench-energy-logo.png" alt="Bench Energy logo" />
-        <div>
-          <div class="name">Bench Energy</div>
-          <div class="meta">Weekly Coal Market Update</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#sample" class="pill">Sample (PDF)</a>
-      </nav>
-    </header>
 
-    <!-- 🔝 WHAT / WHO / WHY -->
-    <section class="hero">
-      <h1 class="h1">Weekly coal market update — for teams that decide fast</h1>
-      <div class="grid cols-3">
-        <div class="card">
-          <h2>What we offer</h2>
-          <p class="lead">
-            A concise weekly PDF (1 page): <b>Market Dashboard</b> with key benchmarks,
-            <b>Key Spreads</b> (Asia–Europe–Africa), and a <b>short commentary & 1–2 week outlook</b>.
-          </p>
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="https://buymeacoffee.com/benchenergy/e/464954" target="_blank" rel="noopener">Subscribe — €25/month</a>
-            <a class="btn secondary" href="#sample">View sample</a>
-          </div>
-          <p class="meta" style="margin-top:10px">4 reports / month • Monday delivery • cancel anytime</p>
-        </div>
-        <div class="card">
-          <h2>Who it’s for</h2>
-          <ul>
-            <li>SME <b>traders</b> — quick pricing compass</li>
-            <li><b>Cement / mini-mills</b> — negotiation benchmarks & budgeting</li>
-            <li><b>Logistics</b> (ports, shipping, rail) — flow & margin signals</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Why it helps</h2>
-          <ul>
-            <li>1-page, same structure every week</li>
-            <li>Clear levels & spreads you can act on</li>
-            <li>Priced for SMEs — not a $10k platform</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <header>
+    <img src="/img/bench-energy-logo.png" alt="Bench Energy logo" />
+    <h1>Bench Energy</h1>
+    <p class="subtitle">Independent weekly coal market updates & price analytics</p>
+    <a class="btn-subscribe" href="https://buymeacoffee.com/benchenergy/e/464954" target="_blank">Subscribe — €25/month</a>
+  </header>
 
-    <!-- 🧩 EXAMPLES of what you get -->
-    <section class="grid cols-2">
-      <div class="card">
-        <h2>Examples (from a typical issue)</h2>
-        <div class="examples">
-          <div class="ex">
-            <h3>Market Dashboard (snippet)</h3>
-            <small>Benchmarks, USD/t — WoW Δ</small>
-            <ul>
-              <li>Asia Pacific FOB (Newcastle): <b>101.1</b> (−6.7)</li>
-              <li>Europe CIF (ARA/API2 composite): <b>102.5</b> (0.0)</li>
-              <li>South Africa FOB (RB/API4 composite): <b>86.5</b> (0.0)</li>
-            </ul>
-          </div>
-          <div class="ex">
-            <h3>Key Spreads (snippet)</h3>
-            <ul>
-              <li>Asia vs Europe (NEWC–ARA): <b>−1.4</b> USD/t</li>
-              <li>Europe vs Africa (ARA–RB): <b>+16.0</b> USD/t</li>
-              <li>Asia vs Africa (NEWC–RB): <b>+14.6</b> USD/t</li>
-            </ul>
-          </div>
-          <div class="ex">
-            <h3>Commentary (sample)</h3>
-            <p class="meta">Asia eased WoW, narrowing premium to Europe; ARA stable; RB flat.  
-            Base case: sideways with risks from Asian restocking vs weak EU coal burn.</p>
-          </div>
-        </div>
-      </div>
-      <div id="sample" class="card">
-        <h2>See the format</h2>
-        <p>Open a 1-page sample to check the layout and level of detail.</p>
-        <p><a class="btn secondary" href="/Sample.pdf" target="_blank" rel="noopener">Open sample (PDF)</a></p>
-        <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
-        <h2>Pricing</h2>
-        <p><b>Monthly — €25</b> for 4 weekly issues. Cancel anytime.</p>
-        <p><a class="btn" href="https://buymeacoffee.com/benchenergy/e/464954" target="_blank" rel="noopener">Subscribe — €25/month</a></p>
-        <p class="meta">Payments via Buy Me a Coffee. We do not store card data.</p>
-      </div>
-    </section>
+  <section class="section">
+    <h2>About Bench Energy</h2>
+    <p>
+      <b>Bench Energy</b> delivers independent weekly coal market updates and composite benchmarks
+      for Asia, Europe, and Africa. Each report includes key regional indices (NEWC, ARA, RB, API8, API10),
+      week-on-week changes, and short commentary.
+    </p>
+    <p>
+      Our data is derived from aggregated market observations and internal analytics — giving you a
+      clear, concise view of global coal price trends. Reports are distributed every Monday to subscribers.
+    </p>
+  </section>
 
-    <footer>
-      <p class="meta">© 2025 Bench Energy • Derived benchmarks and commentary based on diverse market observations and proprietary datasets. Not investment advice.</p>
-      <p class="meta">Questions? <a href="mailto:info@bench.energy">info@bench.energy</a> • Support: <a href="mailto:support@bench.energy">support@bench.energy</a></p>
-    </footer>
-  </div>
+  <section class="section">
+    <h2>Why Subscribe</h2>
+    <ul>
+      <li>Weekly updates covering Asia, Europe, and Africa markets</li>
+      <li>Concise format — key prices, spreads, and 1–2 week outlook</li>
+      <li>Independent composite benchmarks (not tied to Platts or Argus)</li>
+      <li>Four reports per month — first week free</li>
+    </ul>
+    <p style="margin-top:25px;">
+      <a class="btn-subscribe" href="https://buymeacoffee.com/benchenergy/e/464954" target="_blank">Start Free Trial →</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Bench Energy<br />
+    Independent Coal Market Intelligence<br />
+    Email: <a href="mailto:info@bench.energy">info@bench.energy</a> | 
+    <a href="https://bench.energy">www.bench.energy</a><br/>
+    <small>Bench Energy benchmarks are derived composite indicators calculated from aggregated market observations and proprietary datasets.</small>
+  </footer>
+
 </body>
 </html>
