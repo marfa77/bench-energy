@@ -2,11 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Bench Energy</title>
+  <title>Bench Energy — Weekly Coal Market Update</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Two concise tables + short commentary. €25/month for 4 weekly coal market reports. Cancel anytime." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect rx='12' width='64' height='64' fill='%230B0D10'/><circle cx='20' cy='22' r='6' fill='%234CC9F0'/><rect x='30' y='18' width='18' height='8' rx='4' fill='%23F72585'/></svg>">
+  <style>
+    :root{
+      --bg:#0B0D10; --text:#F2F5F7; --muted:#9AA6B2;
+      --primary:#4CC9F0; --accent:#F72585; --card:#11151a; --line:#212832;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--primary);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1000px;margin:0 auto;padding:24px}
+    header{padding:24px 0 8px; display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--primary),var(--accent))}
+    .name{font-weight:700;letter-spacing:.3px}
+    .lang{opacity:.85;font-size:.9rem}
+    .hero{margin:24px 0 12px; padding:28px; background:var(--card); border:1px solid var(--line); border-radius:16px}
+    .h1{margin:0 0 8px;font-size:clamp(24px,4vw,40px);line-height:1.15}
+    .sub{color:var(--muted);max-width:720px}
+    .cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:600;border:1px solid var(--primary);background:var(--primary);color:#001018}
+    .btn.secondary{background:transparent;color:var(--primary)}
+    .meta{font-size:.9rem;color:var(--muted)}
+    .grid{display:grid;gap:16px;margin:24px 0}
+    @media(min-width:880px){ .grid.cols-2{grid-template-columns:1fr 1fr} .grid.cols-3{grid-template-columns:repeat(3,1fr)} }
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+    h2{margin:0 0 10px;font-size:1.25rem}
+    ul{margin:8px 0 0 18px}
+    .table{width:100%;border-collapse:collapse;font-size:.95rem}
+    .table th,.table td{padding:10px;border-bottom:1px solid var(--line)}
+    .table th{color:var(--muted);text-align:left;font-weight:600}
+    .faq dt{font-weight:600;margin-top:12px}
+    .faq dd{margin:6px 0 0 0;color:var(--muted)}
+    footer{margin:28px 0 12px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem}
+    .legal a{color:var(--muted)}
+    .pill{display:inline-block;font-size:.8rem;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+  </style>
 </head>
 <body>
-  <h1>Bench Energy — it works ✅</h1>
-  <p>If you see this as a page (not raw code), GitHub Pages is rendering HTML correctly.</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <div>
+          <div class="name">Bench Energy</div>
+          <div class="lang">Weekly Coal Market Update</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#sample" class="pill">Sample report</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1 class="h1">Know the coal market in <span style="color:var(--primary);font-weight:700">5 minutes</span></h1>
+      <p class="sub">Two concise tables + short commentary, delivered weekly. Clear pricing. Cancel anytime.</p>
+      <div class="cta">
+        <!-- replace the URL with your actual Buy Me a Coffee membership link -->
+        <a class="btn" href="https://www.buymeacoffee.com/benchenergy/membership" target="_blank" rel="noopener">Subscribe — €25/month</a>
+        <a class="btn secondary" href="#sample">View sample</a>
+      </div>
+      <div class="meta">4 reports per month • emailed and available on web • simple monthly billing via Buy Me a Coffee</div>
+    </section>
+
+    <section class="grid cols-2">
+      <div class="card">
+        <h2>What’s inside each weekly report</h2>
+        <ul>
+          <li><b>Market Dashboard:</b> key benchmarks (NEWC, ARA, RB, API2, API4) with WoW/MoM deltas</li>
+          <li><b>Key Spreads:</b> Asia–Europe, Europe–Africa, Asia–Africa (USD/t)</li>
+          <li><b>Commentary:</b> 5–7 lines on drivers behind the week’s move</li>
+          <li><b>Outlook:</b> base case and risks for the next 1–2 weeks</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Who is it for</h2>
+        <ul>
+          <li><b>SME traders:</b> fast compass for pricing and bids/offers</li>
+          <li><b>Cement / mini-mills:</b> negotiation benchmarks and budgeting</li>
+          <li><b>Logistics (ports/shipping/rail):</b> signals on flows and margins</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid cols-2">
+      <div class="card">
+        <h2>Pricing</h2>
+        <table class="table">
+          <thead><tr><th>Plan</th><th>Price</th><th>What you get</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Monthly</b></td>
+              <td>€25</td>
+              <td>4 weekly reports, cancel anytime</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><a class="btn" href="https://www.buymeacoffee.com/benchenergy/membership" target="_blank" rel="noopener">Subscribe — €25/month</a></p>
+        <p class="meta">You can cancel anytime. Access remains until the end of the paid month.</p>
+      </div>
+
+      <div id="sample" class="card">
+        <h2>Sample report</h2>
+        <p>Preview the report format (1 page). If this helps your weekly decisions, subscribe to receive fresh issues every Monday.</p>
+        <!-- replace /Sample.pdf with your actual path -->
+        <p><a class="btn secondary" href="/Sample.pdf" target="_blank" rel="noopener">Open sample (PDF)</a></p>
+        <p class="meta">No sign-up needed for the sample.</p>
+      </div>
+    </section>
+
+    <section class="grid cols-3">
+      <div class="card">
+        <h2>Why it works</h2>
+        <ul>
+          <li>Short and actionable — one page, same structure every week</li>
+          <li>Priced for SMEs — not a $10k platform</li>
+          <li>Consistent schedule — Monday mornings</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>FAQ</h2>
+        <dl class="faq">
+          <dt>Is this a resale of third-party data?</dt>
+          <dd>No. We publish <i>derived benchmarks and analytics</i> compiled from diverse market observations and proprietary datasets.</dd>
+          <dt>Refunds & cancellation?</dt>
+          <dd>Cancel anytime; refunds are discretionary within 7 days if nothing was downloaded/viewed.</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:info@bench.energy">info@bench.energy</a></p>
+        <p>Support: <a href="mailto:support@bench.energy">support@bench.energy</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="legal">
+        <p>© 2025 Bench Energy • Analytical reports and market insights — not investment advice.</p>
+        <p><a href="#terms">Terms</a> · <a href="#privacy">Privacy</a></p>
+      </div>
+
+      <div id="terms" class="card" style="margin-top:16px;">
+        <h2>Terms of Use (short)</h2>
+        <p>By subscribing you receive 4 weekly analytical reports per month in digital form. Subscription renews monthly via Buy Me a Coffee and can be cancelled anytime. Access continues until the end of the paid period. Reports are for informational purposes only and must not be redistributed.</p>
+      </div>
+
+      <div id="privacy" class="card" style="margin-top:16px;">
+        <h2>Privacy Policy (short)</h2>
+        <p>We collect your email and payment status to deliver the reports and manage billing. Payments are processed by Buy Me a Coffee; no card data is stored on this site. For any privacy requests contact <a href="mailto:privacy@bench.energy">privacy@bench.energy</a>.</p>
+      </div>
+
+      <p class="meta" style="margin-top:10px">Bench Energy publishes derived benchmarks and commentary based on a variety of market sources and proprietary datasets. These materials are not reproductions of third-party subscription services and do not constitute investment advice.</p>
+    </footer>
+  </div>
 </body>
 </html>
