@@ -1,7 +1,6 @@
 [
- 
-  { "file": "/report/W39.pdf", "week": 39, "date": "Sep 29 2025" }
-  { "file": "/report/W38.pdf", "week": 38, "date": "Sep 29 2025" }
-  { "file": "/report/W37.pdf", "week": 37, "date": "Sep 29 2025" }
-  { "file": "/report/W36.pdf", "week": 36, "date": "Sep 29 2025" }
+  { "file": "report/W39.pdf", "week": 39, "date": "Sep 29 2025" },
+  { "file": "report/W38.pdf", "week": 38, "date": "Sep 22 2025" },
+  { "file": "report/W37.pdf", "week": 37, "date": "Sep 15 2025" },
+  { "file": "report/W36.pdf", "week": 36, "date": "Sep 8 2025" }
 ]
