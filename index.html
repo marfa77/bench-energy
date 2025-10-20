@@ -117,29 +117,35 @@ footer a:hover{text-decoration:underline}
 </section>
 
 <script>
-async function loadReports(){
-  try{
-    // GitHub Pages требует относительный путь без ведущего /
-    const response = await fetch('report/reports.json');
-    if(!response.ok) throw new Error('File not found');
-    const files = await response.json();
+async function loadReports() {
+  try {
+    // Загружаем JSON с папки "report" относительно текущей страницы
+    const response = await fetch('report/reports.json?' + Date.now()); // кэш-бастинг
+    if (!response.ok) throw new Error('Reports file not found');
+    const reports = await response.json();
+
     const box = document.getElementById('report-list');
-    if(!files.length){box.innerHTML='<p>No reports yet.</p>';return;}
-    files.sort((a,b)=>b.week - a.week);
-    files.forEach(f=>{
-      const c=document.createElement('div');
-      c.className='report-card';
-      c.innerHTML=`<h3>W${f.week} — ${f.date}</h3>
-      <a href="${f.file.replace(/^\//, '')}" target="_blank">Download PDF</a>`;
-      box.appendChild(c);
+    box.innerHTML = '';
+
+    reports.sort((a, b) => b.week - a.week);
+    reports.forEach(r => {
+      const el = document.createElement('div');
+      el.className = 'report-card';
+      el.innerHTML = `
+        <h3>Week ${r.week} — ${r.date}</h3>
+        <a href="${r.file}" target="_blank">📄 Open Report</a>
+      `;
+      box.appendChild(el);
     });
-  }catch(e){
-    console.error('Error loading reports:', e);
-    document.getElementById('report-list').innerHTML='<p style="color:#999;">Unable to load reports.</p>';
+  } catch (e) {
+    console.error('Error:', e);
+    document.getElementById('report-list').innerHTML =
+      '<p style="color:#999;">Reports not found or invalid JSON format.</p>';
   }
 }
 loadReports();
 </script>
+
 
 
 <section id="subscribe" class="container">
