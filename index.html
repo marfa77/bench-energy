@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bench Energy — Weekly Coal Market Reports & Consulting</title>
 <meta name="description" content="Independent weekly coal market updates, analytics, and consulting for the coal and freight sectors. Reports free until 2026.">
-<link rel="icon" href="/images/bench-energy-logo.png" type="image/png">
+<link rel="icon" href="/bench-energy-logo.png" type="image/png">
 
 <style>
 :root {
@@ -53,22 +53,22 @@ footer a:hover{text-decoration:underline}
 <body>
 
 <header>
-  <img src="/images/bench-energy-logo.png" alt="Bench Energy logo">
+  <img src="/bench-energy-logo.png" alt="Bench Energy logo">
   <h1>Bench Energy</h1>
-  <p class="subtitle">Independent weekly coal market reports & consulting services</p>
+  <p class="subtitle">Independent weekly coal market reports & consulting</p>
   <a href="#archive" class="btn-download">📊 View Reports</a>
   <a href="#subscribe" class="btn-primary">Subscribe Free</a>
 </header>
 
 <section id="about" class="container">
   <h2>About</h2>
-  <p><b>Bench Energy</b> delivers concise weekly coal market updates and composite benchmark analytics covering Asia, Europe, and Africa.</p>
-  <p>All reports remain <b>free until the end of 2026</b>. From 2027, subscriptions will apply. Until then — enjoy open access to our data and insights.</p>
+  <p><b>Bench Energy</b> provides concise weekly coal market reports and benchmark analytics covering Asia, Europe, and Africa.</p>
+  <p>All reports remain <b>free until the end of 2026</b>. From 2027, subscriptions will apply. Until then — enjoy open access to our insights.</p>
 </section>
 
 <section id="archive" class="container">
   <h2>Weekly Report Archive — 2025</h2>
-  <p>All weekly reports from July 2025 onward are freely available below.</p>
+  <p>All reports from mid-2025 are freely available below.</p>
   <div id="report-list" class="report-grid"></div>
 </section>
 
@@ -83,7 +83,7 @@ async function loadReports(){
     files.forEach(f=>{
       const c=document.createElement('div');
       c.className='report-card';
-      c.innerHTML=`<h3>Week ${f.week} — ${f.date}</h3>
+      c.innerHTML=`<h3>W${f.week} — ${f.date}</h3>
       <a href="${f.file}" target="_blank"
       onclick="fetch('https://formspree.io/f/YOUR_FORM_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({report:'${f.file}',action:'download'})});">
       Download PDF</a>`;
@@ -98,17 +98,16 @@ loadReports();
 </script>
 
 <section id="subscribe" class="container">
-  <h2>Get Weekly Reports by Email — Free until Dec 2025</h2>
+  <h2>Get Reports by Email — Free until Dec 2025</h2>
   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
     <input type="email" name="email" placeholder="Your email" required>
     <button type="submit">Subscribe Free</button>
   </form>
-  <p class="note">You’ll receive each new report every Monday directly in your inbox.</p>
+  <p class="note">You’ll receive each new report every Monday.</p>
 </section>
 
 <section id="services" class="container">
   <h2>Our Services</h2>
-  <p>Beyond weekly reports, Bench Energy provides consulting and technology services for the coal and freight sectors.</p>
   <div class="service-grid">
     <div class="service-card">
       <h3>⚒️ Industry Consulting</h3>
@@ -127,15 +126,13 @@ loadReports();
       <p>Freight market analytics, rate tracking, and chartering support for dry-bulk operators.</p>
     </div>
   </div>
-  <p style="margin-top:25px;">For inquiries, contact <a href="mailto:info@bench.energy">info@bench.energy</a>.</p>
 </section>
 
 <section id="support" class="container">
   <h2>Support Bench Energy</h2>
-  <p>Reports are free through 2026.  
-     If you find them useful and wish to support independent analytics,  
-     you can send a small thank-you via <b>Buy Me a Coffee</b>.</p>
-  <a class="btn-primary" href="https://www.buymeacoffee.com/benchenergy" target="_blank">☕ Say Thanks via Buy Me a Coffee</a>
+  <p>All reports remain free until 2026.  
+     If you find them useful, support us through <b>Buy Me a Coffee</b>.</p>
+  <a class="btn-primary" href="https://www.buymeacoffee.com/benchenergy" target="_blank">☕ Say Thanks</a>
 </section>
 
 <footer>
@@ -143,8 +140,7 @@ loadReports();
   <a href="https://www.linkedin.com/company/benchenergy/" target="_blank">LinkedIn</a> ·
   <a href="/terms.html">Terms</a> ·
   <a href="/privacy.html">Privacy</a> ·
-  <a href="mailto:info@bench.energy">info@bench.energy</a><br>
-  <small>Bench Energy benchmarks are derived composite indicators calculated from aggregated market observations and proprietary datasets.</small>
+  <a href="mailto:info@bench.energy">info@bench.energy</a>
 </footer>
 
 </body>
