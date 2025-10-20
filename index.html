@@ -40,16 +40,53 @@ nav a:hover{color:var(--brand)}
 section{padding:60px 20px;border-bottom:1px solid #1b1e22}
 h2{font-size:1.5rem;color:var(--brand);margin-bottom:12px;border-bottom:1px solid #22272d;padding-bottom:6px}
 p{margin-bottom:16px}
+
+/* Reports */
 .report-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;margin-top:25px}
 .report-card{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:20px;text-align:center;transition:.25s}
 .report-card:hover{background:#161a20;transform:translateY(-3px)}
+.report-card h3{color:#fff;margin-bottom:8px}
 .report-card a{display:inline-block;margin-top:10px;padding:10px 18px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-weight:600;transition:.25s}
 .report-card a:hover{filter:brightness(1.1)}
+
+/* Subscribe */
+.subscribe-box {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+}
+.subscribe-box input[type=email] {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #0f1115;
+  color: #fff;
+  width: 60%;
+  max-width: 300px;
+}
+.subscribe-box button {
+  margin-left: 10px;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.subscribe-box button:hover {filter: brightness(1.1);}
+.subscribe-box p {color: var(--muted);font-size: .9rem;margin-top:10px}
+
+/* Services */
 .service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:25px}
 .service-card{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:22px;transition:.25s}
 .service-card:hover{background:#161a20;transform:translateY(-3px)}
 .service-card h3{color:var(--brand);margin-bottom:10px;font-size:1.1rem}
 .service-card p{color:var(--muted);font-size:.95rem}
+
+/* Footer */
 footer{background:var(--bg2);padding:40px 20px;text-align:center;color:var(--muted);font-size:.9rem}
 footer a{color:var(--brand);margin:0 6px;text-decoration:none}
 footer a:hover{text-decoration:underline}
@@ -104,7 +141,7 @@ footer a:hover{text-decoration:underline}
 <script>
 async function loadReports() {
   try {
-    const response = await fetch('./report/reports.json?cache=' + Date.now());
+    const response = await fetch('report/reports.json?cache=' + Date.now());
     if (!response.ok) throw new Error('Reports file not found');
     const reports = await response.json();
     const box = document.getElementById('report-list');
@@ -128,21 +165,14 @@ loadReports();
 
 <section id="subscribe" class="container">
   <h2>Get Reports by Email — Free until Dec 2025</h2>
-  <div class="sib-form" style="text-align:center; background-color:#f8f9fa; padding:20px; border-radius:8px;">
-    <div id="sib-form-container">
-      <form id="sib-form" method="POST"
-        action="https://cc8f75c3.sibforms.com/serve/MUIFABxx8gAp3M9fSwCh-y8A53qUkKdMbiE0XIq-6FwEyYb9gkmh-LK_S0_CrQ9s8zb0Sw7S0YVXEZzkqi0A_Tvl46w87RinKclgVE2qHYoogoSqLRx5CkFeCwttWKLkhCHcQGdqDsnlErliPXeCfTUY4UklimX9uB0Z3qx5OKBvKr_qz0AUCt8bxSWZcUbQW7uv_C3Oz0DQIbjJ2g=="
-        data-type="subscription">
-        <label for="EMAIL" style="display:block; font-weight:600; margin-bottom:8px; color:#333;">Enter your email address to subscribe:</label>
-        <input type="email" id="EMAIL" name="EMAIL" placeholder="Your email" required
-          style="padding:10px 12px; border-radius:6px; border:1px solid #ccc; width:60%; max-width:300px;">
-        <button type="submit"
-          style="margin-left:10px; background-color:#14b86a; color:white; padding:10px 20px; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
-          Subscribe
-        </button>
-      </form>
-      <p style="color:#555; font-size:0.9rem; margin-top:10px;">You’ll receive each new report every Monday.</p>
-    </div>
+  <div class="subscribe-box">
+    <form id="sib-form" method="POST"
+      action="https://cc8f75c3.sibforms.com/serve/MUIFABxx8gAp3M9fSwCh-y8A53qUkKdMbiE0XIq-6FwEyYb9gkmh-LK_S0_CrQ9s8zb0Sw7S0YVXEZzkqi0A_Tvl46w87RinKclgVE2qHYoogoSqLRx5CkFeCwttWKLkhCHcQGdqDsnlErliPXeCfTUY4UklimX9uB0Z3qx5OKBvKr_qz0AUCt8bxSWZcUbQW7uv_C3Oz0DQIbjJ2g=="
+      data-type="subscription">
+      <input type="email" id="EMAIL" name="EMAIL" placeholder="Your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p>You’ll receive each new report every Monday.</p>
   </div>
 </section>
 
@@ -158,8 +188,7 @@ loadReports();
 
 <section id="support" class="container">
   <h2>Support Bench Energy</h2>
-  <p>All reports remain free until 2026.  
-     If you find them useful, you can say thanks via <b>Buy Me a Coffee</b>.</p>
+  <p>All reports remain free until 2026.<br>If you find them useful, you can say thanks via <b>Buy Me a Coffee</b>.</p>
   <a class="btn-outline" href="https://www.buymeacoffee.com/benchenergy" target="_blank">☕ Say Thanks</a>
 </section>
 
