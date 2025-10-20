@@ -1,5 +1,7 @@
 [
-  { "file": "/reports/Bench_Energy_Week41.pdf", "week": 41, "date": "Oct 13 2025" },
-  { "file": "/reports/Bench_Energy_Week40.pdf", "week": 40, "date": "Oct 6 2025" },
-  { "file": "/reports/Bench_Energy_Week39.pdf", "week": 39, "date": "Sep 29 2025" }
+ 
+  { "file": "/report/W39.pdf", "week": 39, "date": "Sep 29 2025" }
+  { "file": "/report/W38.pdf", "week": 38, "date": "Sep 29 2025" }
+  { "file": "/report/W37.pdf", "week": 37, "date": "Sep 29 2025" }
+  { "file": "/report/W36.pdf", "week": 36, "date": "Sep 29 2025" }
 ]
