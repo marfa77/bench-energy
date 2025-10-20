@@ -6,7 +6,6 @@
 <title>Bench Energy — Weekly Coal Market Reports & Consulting</title>
 <meta name="description" content="Independent weekly coal market updates, analytics, and consulting for the coal and freight sectors. Reports free until 2026.">
 <link rel="icon" href="/bench-energy-logo.png" type="image/png">
-
 <style>
 :root {
   --bg:#0b0d10;--bg2:#13161a;--text:#e2e5ea;--muted:#9aa3aa;
@@ -15,15 +14,35 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
 .container{max-width:960px;margin:0 auto;padding:0 20px}
-header{background:linear-gradient(180deg,#111418 0%,#0b0d10 100%);border-bottom:2px solid var(--brand);text-align:center;padding:70px 20px}
-header img{width:110px;margin-bottom:18px}
-h1{font-size:2.2rem;margin-bottom:8px}
-.subtitle{color:var(--muted);margin-bottom:28px}
-.btn{display:inline-block;padding:14px 26px;margin:8px;border-radius:10px;text-decoration:none;font-weight:700;transition:.25s}
-.btn-primary{background:var(--brand);color:#001018}
+
+/* --- NAVIGATION --- */
+.site-header {
+  background:#0c0e11;border-bottom:1px solid #1c1f24;position:sticky;top:0;z-index:100;
+}
+.nav-container {
+  max-width:1100px;margin:0 auto;padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem;color:#f0f2f4}
+.logo img{width:34px;height:34px}
+nav a{color:#c9cdd2;margin-left:20px;text-decoration:none;font-size:0.95rem;transition:color 0.2s ease}
+nav a:hover{color:var(--brand)}
+.btn-subscribe{background:var(--brand);color:#001018;padding:8px 16px;border-radius:6px;font-weight:600}
+.btn-subscribe:hover{filter:brightness(1.1)}
+
+/* --- HERO --- */
+.hero{background:linear-gradient(180deg,#101214 0%,#0b0d10 100%);
+  padding:90px 20px 70px;text-align:center}
+.hero-content{max-width:760px;margin:0 auto}
+.hero h1{font-size:2rem;color:#f4f5f7;margin-bottom:14px}
+.hero p{color:#9da3aa;font-size:1rem;margin-bottom:30px}
+.hero-buttons{display:flex;justify-content:center;gap:14px}
+.btn-primary{background:var(--accent);color:#001018;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;transition:.25s}
 .btn-primary:hover{filter:brightness(1.1)}
-.btn-download{background:var(--accent);color:#001018}
-.btn-download:hover{filter:brightness(1.15)}
+.btn-outline{border:1px solid var(--brand);color:var(--brand);padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;transition:.25s}
+.btn-outline:hover{background:var(--brand);color:#001018}
+
+/* --- SECTIONS --- */
 section{padding:60px 20px;border-bottom:1px solid #1b1e22}
 h2{font-size:1.5rem;color:var(--brand);margin-bottom:12px;border-bottom:1px solid #22272d;padding-bottom:6px}
 p{margin-bottom:16px}
@@ -43,114 +62,52 @@ form button:hover{filter:brightness(1.1)}
 footer{background:var(--bg2);padding:40px 20px;text-align:center;color:var(--muted);font-size:.9rem}
 footer a{color:var(--brand);margin:0 6px;text-decoration:none}
 footer a:hover{text-decoration:underline}
-@media(max-width:640px){
-  h1{font-size:1.9rem}
-  form input[type=email]{width:100%;margin-bottom:10px}
+
+/* --- RESPONSIVE --- */
+@media (max-width:720px){
+  .nav-container{flex-direction:column;gap:10px}
+  nav a{margin:6px 10px;display:inline-block}
+  .hero{padding:60px 15px 50px}
+  .hero h1{font-size:1.6rem}
+  .hero-buttons{flex-direction:column}
+  .btn-primary,.btn-outline{width:100%}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="header-content">
-    <img src="/bench-energy-logo.png" alt="Bench Energy logo">
-    <div class="header-text">
-      <h1>Bench Energy</h1>
-      <p class="subtitle">Independent weekly coal market reports & consulting</p>
-      <div class="btn-group">
-        <a href="#archive" class="btn-download">📊 View Reports</a>
-        <a href="#subscribe" class="btn-primary">Subscribe Free</a>
-      </div>
+<header class="site-header">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="/bench-energy-logo.png" alt="Bench Energy logo">
+      <span>Bench Energy</span>
     </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#archive">Reports</a>
+      <a href="#services">Services</a>
+      <a href="#subscribe" class="btn-subscribe">Subscribe</a>
+    </nav>
   </div>
 </header>
 
-<style>
-header {
-  background: linear-gradient(180deg, #101214 0%, #0b0d10 100%);
-  border-bottom: 1px solid #1c1f24;
-  padding: 60px 20px 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-.header-content img {
-  width: 85px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-.header-text h1 {
-  font-size: 2rem;
-  color: #f2f4f6;
-  margin: 10px 0 4px;
-  font-weight: 700;
-}
-.subtitle {
-  color: #9da5ad;
-  font-size: 1rem;
-  margin-bottom: 16px;
-}
-.btn-group {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.25s;
-}
-.btn-primary {
-  background: var(--brand);
-  color: #001018;
-}
-.btn-primary:hover {
-  filter: brightness(1.1);
-}
-.btn-download {
-  background: var(--accent);
-  color: #001018;
-}
-.btn-download:hover {
-  filter: brightness(1.15);
-}
-@media (max-width: 600px) {
-  header {
-    padding: 40px 15px;
-  }
-  .header-content img {
-    width: 70px;
-  }
-  .header-text h1 {
-    font-size: 1.7rem;
-  }
-  .btn-group {
-    flex-direction: column;
-    width: 100%;
-  }
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-</style>
-
+<section class="hero">
+  <div class="hero-content">
+    <h1>Independent weekly coal market reports & consulting</h1>
+    <p>Concise insights, derived benchmarks, and analytics across Asia, Europe & Africa.  
+       All reports free until the end of 2026.</p>
+    <div class="hero-buttons">
+      <a href="#archive" class="btn-primary">📊 View Reports</a>
+      <a href="#subscribe" class="btn-outline">Subscribe Free</a>
+    </div>
+  </div>
+</section>
 
 <section id="about" class="container">
   <h2>About</h2>
-  <p><b>Bench Energy</b> provides concise weekly coal market reports and benchmark analytics covering Asia, Europe, and Africa.</p>
-  <p>All reports remain <b>free until the end of 2026</b>. From 2027, subscriptions will apply. Until then — enjoy open access to our insights.</p>
+  <p><b>Bench Energy</b> delivers independent weekly coal market updates and benchmark analytics for Asia, Europe, and Africa.</p>
+  <p>Our mission is to provide reliable, transparent market insights that help traders, utilities, and industrial users make better decisions.</p>
 </section>
 
 <section id="archive" class="container">
@@ -219,14 +176,14 @@ loadReports();
   <h2>Support Bench Energy</h2>
   <p>All reports remain free until 2026.  
      If you find them useful, support us through <b>Buy Me a Coffee</b>.</p>
-  <a class="btn-primary" href="https://www.buymeacoffee.com/benchenergy" target="_blank">☕ Say Thanks</a>
+  <a class="btn-outline" href="https://www.buymeacoffee.com/benchenergy" target="_blank">☕ Say Thanks</a>
 </section>
 
 <footer>
-  © 2025 Bench Energy ·
-  <a href="https://www.linkedin.com/company/benchenergy/" target="_blank">LinkedIn</a> ·
-  <a href="/terms.html">Terms</a> ·
-  <a href="/privacy.html">Privacy</a> ·
+  © 2025 Bench Energy · 
+  <a href="https://www.linkedin.com/company/benchenergy/" target="_blank">LinkedIn</a> · 
+  <a href="/terms.html">Terms</a> · 
+  <a href="/privacy.html">Privacy</a> · 
   <a href="mailto:info@bench.energy">info@bench.energy</a>
 </footer>
 
