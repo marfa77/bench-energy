@@ -119,7 +119,9 @@ footer a:hover{text-decoration:underline}
 <script>
 async function loadReports(){
   try{
-    const response = await fetch('/report/reports.json');
+    // GitHub Pages требует относительный путь без ведущего /
+    const response = await fetch('report/reports.json');
+    if(!response.ok) throw new Error('File not found');
     const files = await response.json();
     const box = document.getElementById('report-list');
     if(!files.length){box.innerHTML='<p>No reports yet.</p>';return;}
@@ -128,9 +130,7 @@ async function loadReports(){
       const c=document.createElement('div');
       c.className='report-card';
       c.innerHTML=`<h3>W${f.week} — ${f.date}</h3>
-      <a href="${f.file}" target="_blank"
-      onclick="fetch('https://formspree.io/f/YOUR_FORM_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({report:'${f.file}',action:'download'})});">
-      Download PDF</a>`;
+      <a href="${f.file.replace(/^\//, '')}" target="_blank">Download PDF</a>`;
       box.appendChild(c);
     });
   }catch(e){
@@ -140,6 +140,7 @@ async function loadReports(){
 }
 loadReports();
 </script>
+
 
 <section id="subscribe" class="container">
   <h2>Get Reports by Email — Free until Dec 2025</h2>
